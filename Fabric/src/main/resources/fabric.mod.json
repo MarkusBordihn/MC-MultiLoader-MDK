@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "id": "a__mod_id__",
+  "version": "${version}",
+  "name": "__MOD_NAME__",
+  "description": "__MOD_DESCRIPTION__",
+  "authors": [
+    "__MOD_AUTHOR__"
+  ],
+  "contact": {
+    "homepage": "https://example.org/examplemod",
+    "issues": "https://example.org/issues"
+  },
+  "license": "MIT",
+  "icon": "logo.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "org.example.examplemod.ExampleMod"
+    ],
+    "client": [
+      "org.example.examplemod.ExampleModClient"
+    ]
+  },
+  "mixins": [],
+  "accessWidener": "examplemod.accesswidener",
+  "depends": {
+    "fabricloader": ">=0.15",
+    "fabric": "*",
+    "minecraft": "1.18.2",
+    "java": ">=17"
+  },
+  "suggests": {
+    "tooltipfix": "*"
+  }
+}

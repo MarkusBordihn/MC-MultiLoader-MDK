@@ -1,4 +1,9 @@
-MIT License
+# License
+
+This license applies solely to the code within this repository.
+It does not cover build tools or any other assets, which are explicitly excluded.
+
+## MIT License
 
 Copyright (c) 2024 Markus Bordihn
 
