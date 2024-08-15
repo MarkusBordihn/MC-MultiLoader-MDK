@@ -20,5 +20,5 @@ pluginManagement {
   }
 }
 
-rootProject.name = '__PROJECT_NAME__'
+rootProject.name = '__MOD_NAME__'
 include("Common", "Fabric", "Forge")

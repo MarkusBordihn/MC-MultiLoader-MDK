@@ -1,5 +1,7 @@
 # MC-MultiLoader-MDK (Minecraft Multi-Loader Mod Developer Kit) - 1.18.2
 
+[![Java CI with Gradle](https://github.com/MarkusBordihn/MC-MultiLoader-MDK/actions/workflows/gradle.yml/badge.svg)](https://github.com/MarkusBordihn/MC-MultiLoader-MDK/actions/workflows/gradle.yml)
+
 MC-MultiLoader-MDK is a Minecraft Mod Developer Kit designed to streamline the creation of mods
 compatible with multiple mod loaders, including Forge, Fabric, and Neo Forge.
 
@@ -51,22 +53,33 @@ The following plugins are recommended for mod development with MC-MultiLoader-MD
 
 ## Getting Started
 
-...
+Create a new project folder and use NPM to create a new project based on the MC-MultiLoader-MDK.
+
+Use the following command to create a new project:
+
+```bash
+npx mc-multi-loader-mdk new
+```
+
+After entering the required information, the project will be created in a new project folder.
+Open the project in IntelliJ IDEA and start developing your mod.
 
 ## Project Placeholder
 
 This project uses placeholders to ensure that the project is correctly set up for each mod loader.
-You can automatically replace these placeholders by running the command `....`.
+
+You can automatically replace these placeholders by running the command
+`npx mc-multi-loader-mdk new`.
 
 If you prefer to replace the placeholders manually, you can use the following table as a reference:
 
 | Placeholder                      | Description                         | Example                          |
 |----------------------------------|-------------------------------------|----------------------------------|
 | `org.example.examplemod`         | The package name of your mod.       | `org.example.examplemod`         |
+| `ExampleMod`                     | The class name of your mod.         | `ExampleMod`                     |
 | `https://example.org/examplemod` | The website of the mod.             | `https://example.org/examplemod` |
 | `https://example.org/issues`     | The issue tracker of the mod.       | `https://example.org/issues`     |
-| `a__mod_id__`                    | The unique identifier for your mod. | `example_mod`                    |
-| `__PROJECT_NAME__`               | The name of your project.           | `Example Mod`                    |
+| `a__mod_id__`, `example_mod`     | The unique identifier for your mod. | `example_mod`                    |
 | `__MOD_NAME__`                   | The name of your mod.               | `Example Mod`                    |
 | `__MOD_VERSION__`                | The version of your mod.            | `1.0.0`                          |
 | `__MOD_DESCRIPTION__`            | A brief description of your mod.    | `A simple example mod`           |
