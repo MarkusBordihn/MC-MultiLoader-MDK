@@ -79,11 +79,15 @@ If you prefer to replace the placeholders manually, you can use the following ta
 | `ExampleMod`                     | The class name of your mod.         | `ExampleMod`                     |
 | `https://example.org/examplemod` | The website of the mod.             | `https://example.org/examplemod` |
 | `https://example.org/issues`     | The issue tracker of the mod.       | `https://example.org/issues`     |
-| `a__mod_id__`, `example_mod`     | The unique identifier for your mod. | `example_mod`                    |
+| `example_mod`                    | The unique identifier for your mod. | `example_mod`                    |
 | `__MOD_NAME__`                   | The name of your mod.               | `Example Mod`                    |
 | `__MOD_VERSION__`                | The version of your mod.            | `1.0.0`                          |
 | `__MOD_DESCRIPTION__`            | A brief description of your mod.    | `A simple example mod`           |
 | `__MOD_AUTHOR__`                 | The author of the mod.              | `John Doe`                       |
 | `__MOD_LICENSE__`                | The license of the mod.             | `MIT`                            |
+
+## GitHub Actions
+
+This project uses GitHub Actions to automate the build process and ensure code quality.
 
 [intellij-idea]: https://www.jetbrains.com/idea/download/

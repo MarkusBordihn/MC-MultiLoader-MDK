@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "id": "a__mod_id__",
+  "id": "example_mod",
   "version": "${version}",
   "name": "__MOD_NAME__",
   "description": "__MOD_DESCRIPTION__",
@@ -20,6 +20,9 @@
     ],
     "client": [
       "org.example.examplemod.ExampleModClient"
+    ],
+    "fabric-gametest": [
+      "org.example.examplemod.gametest.SmokeTest"
     ]
   },
   "mixins": [],
