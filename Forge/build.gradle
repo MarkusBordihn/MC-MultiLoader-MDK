@@ -1,6 +1,6 @@
 plugins {
   id 'maven-publish'
-  id 'net.minecraftforge.gradle' version '6.+'
+  id 'net.minecraftforge.gradle' version '[6.0.24,6.2)'
   id 'com.matthewprenger.cursegradle' version '1.4.0'
   id 'nu.studer.credentials' version '3.0'
   id "com.modrinth.minotaur" version "2.+"
@@ -13,7 +13,9 @@ archivesBaseName = "${mod_id}-forge-${minecraft_version}"
 println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
 minecraft {
   mappings channel: 'official', version: "${project.minecraft_version}"
-  // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
+
+  reobf = false
+  copyIdeResources = true
 
   // Access Transformer
   if (file("src/main/resources/META-INF/accesstransformer.cfg").exists()) {
@@ -108,14 +110,21 @@ dependencies {
 
   // Additional helpful Mods for development (runtime dependency)
   if (project.hasProperty('forge_jei_mod') && project.forge_jei_mod) {
+    compileOnly fg.deobf("curse.maven:jei-238222:${project.forge_jei_mod}")
     runtimeOnly fg.deobf("curse.maven:jei-238222:${project.forge_jei_mod}")
   }
+
   if (project.hasProperty('forge_spark_mod') && project.forge_spark_mod) {
     runtimeOnly fg.deobf("curse.maven:spark-361579:${project.forge_spark_mod}")
   }
+
   if (project.hasProperty('forge_xaeros_minimap_mod') && project.forge_xaeros_minimap_mod) {
+    compileOnly fg.deobf("curse.maven:xaeros_minimap-263420:${project.forge_xaeros_minimap_mod}")
     runtimeOnly fg.deobf("curse.maven:xaeros_minimap-263420:${project.forge_xaeros_minimap_mod}")
   }
+
+  // Hack fix for now, force jopt-simple to be exactly 5.0.4 because Mojang ships that version, but some transitive dependencies request 6.0+
+  implementation('net.sf.jopt-simple:jopt-simple:5.0.4') { version { strictly '5.0.4' } }
 }
 
 tasks.withType(JavaCompile).configureEach {
@@ -140,12 +149,6 @@ jar {
     ])
   }
 }
-
-// Example configuration to allow publishing using the maven-publish task
-// This is the preferred method to reobfuscate your jar file
-jar.finalizedBy('reobfJar')
-// However if you are in a multi-project build, dev time needs unobfed jar files, so you can delay the obfuscation until publishing by doing
-//publish.dependsOn('reobfJar')
 
 publishing {
   publications {

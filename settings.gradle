@@ -20,5 +20,5 @@ pluginManagement {
   }
 }
 
-rootProject.name = '__MOD_NAME__'
-include("Common", "Fabric", "Forge")
+rootProject.name = '__MOD_NAME__ 1.21.1'
+include("Common", "Fabric", "Forge", "NeoForge")

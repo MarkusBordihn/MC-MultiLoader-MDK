@@ -1,5 +1,5 @@
 modLoader = "javafml"
-loaderVersion = "[0,)"
+loaderVersion = "[4,)"
 license = "MIT"
 issueTrackerURL = "https://example.org/issues"
 
@@ -14,15 +14,15 @@ authors = "__MOD_AUTHOR__"
 description = '''__MOD_DESCRIPTION__'''
 
 [[dependencies.example_mod]]
-modId = "forge"
-mandatory = true
-versionRange = "[0,)"
+modId = "neoforge"
+type = "required"
+versionRange = "[21.1.0,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.example_mod]]
 modId = "minecraft"
-mandatory = true
+type = "required"
 versionRange = "[1.21.1,1.22)"
 ordering = "NONE"
 side = "BOTH"

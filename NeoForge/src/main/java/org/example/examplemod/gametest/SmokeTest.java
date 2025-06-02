@@ -2,15 +2,17 @@ package org.example.examplemod.gametest;
 
 import net.minecraft.gametest.framework.GameTest;
 import net.minecraft.gametest.framework.GameTestHelper;
-import net.minecraftforge.fml.ModList;
-import net.minecraftforge.gametest.GameTestHolder;
+import net.neoforged.fml.ModList;
+import net.neoforged.neoforge.gametest.GameTestHolder;
+import net.neoforged.neoforge.gametest.PrefixGameTestTemplate;
 import org.example.examplemod.Constants;
 
 @SuppressWarnings("unused")
+@PrefixGameTestTemplate(value = false)
 @GameTestHolder(Constants.MOD_ID)
 public class SmokeTest {
 
-  @GameTest(template = "example_mod:gametest.3x3x3")
+  @GameTest(template = "gametest.3x3x3")
   public void testModRegistered(GameTestHelper helper) {
     GameTestHelpers.assertTrue(
         helper,

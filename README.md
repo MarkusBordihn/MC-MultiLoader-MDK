@@ -1,4 +1,4 @@
-# MC-MultiLoader-MDK (Minecraft Multi-Loader Mod Developer Kit) - 1.18.2
+# MC-MultiLoader-MDK (Minecraft Multi-Loader Mod Developer Kit) - 1.21.1
 
 [![Java CI with Gradle](https://github.com/MarkusBordihn/MC-MultiLoader-MDK/actions/workflows/gradle.yml/badge.svg)](https://github.com/MarkusBordihn/MC-MultiLoader-MDK/actions/workflows/gradle.yml)
 
