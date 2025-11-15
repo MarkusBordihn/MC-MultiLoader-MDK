@@ -1,4 +1,4 @@
-name: Build with Gradle
+name: 1.20.1 Build
 
 on: [ push, pull_request ]
 
