@@ -1,4 +1,4 @@
-name: Build Status 1.18.2
+name: Build 1.18.2
 
 on: [ push, pull_request ]
 
