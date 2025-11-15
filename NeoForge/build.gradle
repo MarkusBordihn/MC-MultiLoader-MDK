@@ -1,13 +1,13 @@
 plugins {
   id 'maven-publish'
-  id 'net.neoforged.gradle.userdev' version '7.0.145'
+  id 'net.neoforged.gradle.userdev' version '7.0.192'
   id 'com.matthewprenger.cursegradle' version '1.4.0'
   id 'nu.studer.credentials' version '3.0'
   id "com.modrinth.minotaur" version "2.+"
 }
 
 base {
-  archivesName = "${mod_id}-neoforge-${minecraft_version}"
+  archivesName = "${project.mod_id}-neoforge-${project.minecraft_version}"
 }
 
 if (file('src/main/resources/META-INF/accesstransformer.cfg').exists()) {
@@ -64,7 +64,6 @@ dependencies {
   }
 
   if (project.hasProperty('neoforge_xaeros_minimap_mod') && project.neoforge_xaeros_minimap_mod) {
-    compileOnly "curse.maven:xaeros_minimap-263420:${project.neoforge_xaeros_minimap_mod}"
     runtimeOnly "curse.maven:xaeros_minimap-263420:${project.neoforge_xaeros_minimap_mod}"
   }
 }

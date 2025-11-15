@@ -8,7 +8,9 @@ plugins {
 
 apply plugin: 'net.minecraftforge.gradle'
 
-archivesBaseName = "${mod_id}-forge-${minecraft_version}"
+base {
+  archivesName = "${project.mod_id}-forge-${project.minecraft_version}"
+}
 
 println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
 minecraft {
@@ -25,7 +27,6 @@ minecraft {
   // Run configurations
   runs {
     client {
-      jvmArgs "-XX:+AllowEnhancedClassRedefinition"
       workingDirectory project.file('run/client')
       property 'forge.logging.markers', 'REGISTRIES'
       property 'forge.logging.console.level', 'debug'
@@ -49,7 +50,6 @@ minecraft {
     }
 
     server {
-      jvmArgs "-XX:+AllowEnhancedClassRedefinition"
       workingDirectory project.file('run/server')
       property 'forge.logging.markers', 'REGISTRIES'
       property 'forge.logging.console.level', 'debug'
@@ -119,7 +119,6 @@ dependencies {
   }
 
   if (project.hasProperty('forge_xaeros_minimap_mod') && project.forge_xaeros_minimap_mod) {
-    compileOnly fg.deobf("curse.maven:xaeros_minimap-263420:${project.forge_xaeros_minimap_mod}")
     runtimeOnly fg.deobf("curse.maven:xaeros_minimap-263420:${project.forge_xaeros_minimap_mod}")
   }
 
@@ -187,4 +186,14 @@ if (project.hasProperty('modrinth_project_id') && project.modrinth_project_id) {
     gameVersions = ["${project.minecraft_version}"]
     loaders = ["forge"]
   }
+}
+
+// Merge the resources and classes into the same directory.
+// This is done because java expects modules to be in a single directory.
+// And if we have it in multiple we have to do performance intensive hacks like having the UnionFileSystem
+// This will eventually be migrated to ForgeGradle so modders don't need to manually do it. But that is later.
+sourceSets.each {
+  def dir = layout.buildDirectory.dir("sourcesSets/$it.name")
+  it.output.resourcesDir = dir
+  it.java.destinationDirectory = dir
 }
