@@ -1,4 +1,4 @@
-name: Build 1.18.2
+name: 1.18.2 Build
 
 on: [ push, pull_request ]
 
