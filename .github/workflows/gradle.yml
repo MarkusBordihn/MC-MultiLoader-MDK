@@ -1,4 +1,4 @@
-name: Java CI with Gradle
+name: Build Status 1.18.2
 
 on: [ push, pull_request ]
 

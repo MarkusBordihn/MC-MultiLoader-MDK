@@ -42,6 +42,11 @@ ensure compatibility.
 However, I highly recommend using [IntelliJ IDEA][intellij-idea] for mod development, as it provides
 excellent support for Java development and Minecraft modding.
 
+### JDK requirements
+
+Java Development Kit (JDK) 17 or higher is required for mod development with MC-MultiLoader-MDK.
+The compiler for the final build should be set to Java 17.
+
 ### Recommended IntelliJ Plugins
 
 The following plugins are recommended for mod development with MC-MultiLoader-MDK:
